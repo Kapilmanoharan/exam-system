@@ -14,7 +14,7 @@ pipeline {
                         // Windows
                         bat 'python -m venv venv'
                         bat 'venv\\Scripts\\pip.exe install -r requirements.txt'
-                    
+                        bat 'venv\\Scripts\\python.exe app\\main.py'
                 }
             }
         }
