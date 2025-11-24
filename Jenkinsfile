@@ -21,7 +21,6 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-
                         bat 'venv\\Scripts\\python.exe -m pytest'
                     }
                 }
