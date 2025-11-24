@@ -1,9 +1,4 @@
 def grade(student_answers, correct_answers):
-    """
-    student_answers: dict of question_id -> student's answer
-    correct_answers: dict of question_id -> correct answer
-    Returns: score (int)
-    """
     score = 0
     for q, ans in correct_answers.items():
         if student_answers.get(q) == ans:
@@ -11,9 +6,6 @@ def grade(student_answers, correct_answers):
     return score
 
 def pass_fail(score, total, passing_percentage=50):
-    """
-    Returns True if score is enough to pass, False otherwise.
-    """
     if total == 0:
         return False
     percent = (score / total) * 100
