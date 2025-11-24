@@ -11,9 +11,10 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                        // Windows
                         bat 'python -m venv venv'
                         bat 'venv\\Scripts\\pip.exe install -r requirements.txt'
-                    }
+                    
                 }
             }
         }
@@ -21,15 +22,18 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                     
                         bat 'venv\\Scripts\\python.exe -m pytest'
-                    }
+                    
                 }
             }
+        }
     }
 
     post {
         always {
+            // clean workspace if you like
             cleanWs()
         }
     }
-
+}
